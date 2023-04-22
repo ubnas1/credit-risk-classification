@@ -2,30 +2,34 @@
 
 ## Overview of the Analysis
 
-In this section, describe the analysis you completed for the machine learning models used in this Challenge. This might include:
+In this project, I have used LogisticRegression model to train and test it for identifying the creditworthiness of the borrowers.
 
-* Explain the purpose of the analysis.
-* Explain what financial information the data was on, and what you needed to predict.
-* Provide basic information about the variables you were trying to predict (e.g., `value_counts`).
-* Describe the stages of the machine learning process you went through as part of this analysis.
-* Briefly touch on any methods you used (e.g., `LogisticRegression`, or any resampling method).
+The historical data for this project comes from a lending services company which contains various variables such as 'loan_size', 'borrower_income', 'debt_to_income', 'total_debt' and more.
+
+I have imported the data in a data frame then split the data into X (Features) and y (Target) variables.
+
+Splitting of the data is done as the next step to train the model and then to test the accuracy of the model.
+
+I have used  LogisticRegression model in this project for training and testing purposes.
+
+After doing the first analysis with the provided data, I have used RandomOverSampler method to balance the data. Then I have used the same procedure to check if the accuracy of the model has increased.
+
+The results of the analysis are as follows:
 
 ## Results
 
-Using bulleted lists, describe the balanced accuracy scores and the precision and recall scores of all machine learning models.
-
 * Machine Learning Model 1:
-  * Description of Model 1 Accuracy, Precision, and Recall scores.
+  * Accuracy Score : 0.9924164259182832
+  * recall: 0 -> 1.00 | 1 -> 0.89
 
 
 
-* Machine Learning Model 2:
-  * Description of Model 2 Accuracy, Precision, and Recall scores.
+* Machine Learning Model after RandonOverSampling:
+  * Accuracy Score : 0.9942073279078859
+  * recall: 0 -> 0.99 | 1 -> 0.99
 
 ## Summary
 
-Summarise the results of the machine learning models, and include a recommendation on the model to use, if any. For example:
-* Which one seems to perform best? How do you know it performs best?
-* Does performance depend on the problem we are trying to solve? (For example, is it more important to predict the `1`'s, or predict the `0`'s? )
+Looking at the confusion matrix and the classification report, it is very obvious that the model performed very well. The accuracy of 99% is very good. The number of false positives and false negatives are very small as compared to the number of true positives. So we can confidently use logistic regression for our current dataset. 
 
-If you do not recommend any of the models, please justify your reasoning.
+But after doing RandonOverSampling the model has improved the accuracy score from 99.24 to 99.42. It is still better to balance the train and test data to reduce the bias and improve accuracy.
